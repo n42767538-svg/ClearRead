@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-sans: "Public Sans", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html,
+  body {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+  }
+
+  :focus-visible {
+    outline: 4px solid #0a3678;
+    outline-offset: 3px;
+  }
+}
+
+/* Senior-friendly extra-large range slider */
+input[type="range"].senior-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 20px;
+  background: #e2e8f0;
+  border: 2px solid #000000;
+  border-radius: 9999px;
+  cursor: pointer;
+}
+
+input[type="range"].senior-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 9999px;
+  background: #0a3678;
+  border: 4px solid #ffffff;
+  box-shadow: 0 0 0 3px #000000;
+  cursor: grab;
+}
+
+input[type="range"].senior-slider::-webkit-slider-thumb:active {
+  cursor: grabbing;
+  background: #c2410c;
+}
+
+input[type="range"].senior-slider::-moz-range-thumb {
+  width: 46px;
+  height: 46px;
+  border-radius: 9999px;
+  background: #0a3678;
+  border: 4px solid #ffffff;
+  box-shadow: 0 0 0 3px #000000;
+  cursor: grab;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
